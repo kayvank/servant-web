@@ -4,9 +4,10 @@
 # @file
 # @version 0.1
 
-
+COMPANY=kayvank
+APP_NAME=servant-web
 BUILD_NUMBER=$(CIRCLE_BUILD_NUM)
-GIT_TAG=$(shell git rev-parse --short HEAD)-$(BUILD_NUMBER)
+GIT_SHA=$(shell git rev-parse --short HEAD)
 IMAGE_NAME=$(COMPANY)/$(APP_NAME)
 
 login:
@@ -15,22 +16,20 @@ login:
 setup: login
 	stack setup
 
-build: setup
+build:
 	stack build
 	stack test
 
-build_image: build
+build_image: setup
 	docker build -t $(IMAGE_NAME) .
 
-tag_image: build_image
-	docker tag $(IMAGE_NAME)  $(IMAGE_NAME):$(GIT_TAG)
-	docker tag $(IMAGE_NAME) $(IMAGE_NAME):latest
 
-publish: tag_image
-	docker push $(IMAGE_NAME):$(GIT_TAG)
+publish: build_image
+	docker push $(IMAGE_NAME):$(BUILD_NUMBER)
 	docker push $(IMAGE_NAME):latest
 
-build: publish
 
 .DEFAULT_GOAL :=publish
+.PHONY: all
+all: ; $(info $$var is [${var}]) $(IMAGE_NAME)
 # end
