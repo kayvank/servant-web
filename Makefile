@@ -22,7 +22,7 @@ tag_image: build_image
 	docker tag $(IMAGE):$(VERSION) $(IMAGE):$(TAG)
 	docker tag $(IMAGE):$(VERSION) $(IMAGE):lates
 
-publish: build_image
+publish: tag_image
 	docker push $(IMAGE):$(TAG)
 	docker push $(IMAGE):latest
 

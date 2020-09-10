@@ -1,3 +1,7 @@
+[![CircleCI](https://circleci.com/gh/kayvank/servant-web.svg?style=svg)]( https://circleci.com/gh/kayvank/servant-web)
+
+
+
 servant-web
 --
 A simple [servant](https://www.servant.dev/) http server using [docker](https://hub.docker.com/) and [circleci](https://circleci.com/)
@@ -53,5 +57,4 @@ curl -v <IP>:3000/item
 [servant-wpg 2015 paper](https://www.andres-loeh.de/Servant/servant-wgp.pdf)
 
 [docker-image](https://circleci.com/)
-
 [circlci build](https://circleci.com/)
