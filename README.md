@@ -49,6 +49,9 @@ curl -v <IP>:3000/item
 
 
 ## Resources
+
 [servant-wpg 2015 paper](https://www.andres-loeh.de/Servant/servant-wgp.pdf)
+
 [docker-image](https://circleci.com/)
+
 [circlci build](https://circleci.com/)
