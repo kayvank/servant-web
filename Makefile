@@ -15,15 +15,12 @@ TAG=$(VERSION).$(BUILD_NUMBER)
 login:
 	@docker login -u "$(DOCKER_USER_NAME)" -p "$(DOCKER_USER_PASSWORD)" docker.io
 
-setup: login
-	stack setup
-
-build_image: setup
+build_image: login
 	docker build -t $(IMAGE):$(VERSION) .
 
 tag_image: build_image
-	docker tag $(IMAGE):$(VERSION)   $(IMAGE):$(TAG)
-	docker tag $(IMAGE):$(VERSION)   $(IMAGE):lates
+	docker tag $(IMAGE):$(VERSION) $(IMAGE):$(TAG)
+	docker tag $(IMAGE):$(VERSION) $(IMAGE):lates
 
 publish: build_image
 	docker push $(IMAGE):$(TAG)
@@ -31,6 +28,4 @@ publish: build_image
 
 
 .DEFAULT_GOAL :=publish
-.PHONY: all
-all: ; $(info $$var is [${var}]) $(IMAGE)
 # end
