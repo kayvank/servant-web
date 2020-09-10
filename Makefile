@@ -20,7 +20,7 @@ build_image: login
 
 tag_image: build_image
 	docker tag $(IMAGE):$(VERSION) $(IMAGE):$(TAG)
-	docker tag $(IMAGE):$(VERSION) $(IMAGE):lates
+	docker tag $(IMAGE):$(VERSION) $(IMAGE):latest
 
 publish: tag_image
 	docker push $(IMAGE):$(TAG)

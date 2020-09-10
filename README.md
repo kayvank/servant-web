@@ -1,7 +1,7 @@
-[![CircleCI](https://circleci.com/gh/kayvank/servant-web.svg?style=svg)]( https://circleci.com/gh/kayvank/servant-web)
-
 servant-web
 --
+[![CircleCI](https://circleci.com/gh/kayvank/servant-web.svg?style=svg)]( https://circleci.com/gh/kayvank/servant-web)
+
 A simple [servant](https://www.servant.dev/) http server using [docker](https://hub.docker.com/) and [circleci](https://circleci.com/)
 
 ## Prerequisite
@@ -26,12 +26,13 @@ stack build --file-watch
 ## Publish the docker-image 
 To publish your image to [docker hub](https://hub.docker.com/):
 
-Prerequisite: docker hub account
 
 ``` sh
 make
 ```
-Prerequisite: [direvn](https://direnv.net/) 
+Prerequisite: 
+- [direvn](https://direnv.net/) 
+-  docker hub account
 
 ### Execute docker image locally
 To execute to image locally:
@@ -50,9 +51,10 @@ curl -v <IP>:3000/item
 ```
 
 
-## Resources
+## References
 
 [servant-wpg 2015 paper](https://www.andres-loeh.de/Servant/servant-wgp.pdf)
 
-[docker-image](https://circleci.com/)
+[docker-image](https://hub.docker.com/repository/docker/kayvank/servant-web)
+
 [circlci build](https://circleci.com/)
