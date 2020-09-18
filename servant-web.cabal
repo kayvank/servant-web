@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 8b93e02d9ae9d7efe2cd104af3f5ad5217b3abc7f445715b0683a1293a7bf072
+-- hash: e3aeafbc10b51cf43e601d48e9df5872a368e8d52bceac1e3bcad87627bd98ef
 
 name:           servant-web
 version:        0.1.0.0
@@ -27,8 +27,11 @@ source-repository head
 
 library
   exposed-modules:
+      Database
       Lib
       Model
+      Schema
+      UserApi
   other-modules:
       Paths_servant_web
   hs-source-dirs:
@@ -36,6 +39,11 @@ library
   build-depends:
       aeson
     , base >=4.7 && <5
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , persistent-template
     , servant
     , servant-server
     , text
@@ -51,10 +59,15 @@ executable servant-web-exe
       Paths_servant_web
   hs-source-dirs:
       app
-  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Wincomplete-record-update -Wincomnplete-uni-patterns -Wincomnplete-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aeson
     , base >=4.7 && <5
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , persistent-template
     , servant
     , servant-server
     , servant-web
@@ -72,10 +85,15 @@ test-suite servant-web-test
       Paths_servant_web
   hs-source-dirs:
       test
-  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Wincomplete-record-update -Wincomnplete-uni-patterns -Wincomnplete-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aeson
     , base >=4.7 && <5
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , persistent-template
     , servant
     , servant-server
     , servant-web

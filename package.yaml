@@ -29,6 +29,11 @@ dependencies:
 - warp
 - text
 - time
+- mtl
+- monad-logger
+- persistent
+- persistent-postgresql
+- persistent-template
 
 
 library:
@@ -40,6 +45,10 @@ executables:
     source-dirs:         app
     ghc-options:
     - -Wall
+    - -Wcompat
+    - -Wincomplete-record-update
+    - -Wincomnplete-uni-patterns
+    - -Wincomnplete-constraints
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
@@ -52,6 +61,10 @@ tests:
     source-dirs:         test
     ghc-options:
     - -Wall
+    - -Wcompat
+    - -Wincomplete-record-update
+    - -Wincomnplete-uni-patterns
+    - -Wincomnplete-constraints
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N

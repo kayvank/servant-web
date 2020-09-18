@@ -8,6 +8,7 @@ A simple [servant](https://www.servant.dev/) http server using [docker](https://
 - [stack](https://docs.haskellstack.org/en/stable/README/)
 - [docker](https://www.docker.com/)
 - [curl](https://curl.haxx.se/)
+- [postgresql](https://www.archlinux.org/packages/?name=postgresql)
 
 ## building locally using stack
 
