@@ -1,0 +1,4 @@
+##  emacs REST client integration tests
+##
+## get a user by id
+GET http://localhost:3000/v1/users/1234

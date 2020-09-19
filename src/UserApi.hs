@@ -40,6 +40,9 @@ usersServer conn = (fetchUserHandler conn) :<|> (createUserHandler conn )
 createUserHandler :: ConnectionString -> User -> Handler Int64
 createUserHandler conn user = liftIO $ createUser conn user
 
+runServer' :: ConnectionString -> IO ()
+runServer' dbConn = run 3000 (serve usersApi (usersServer dbConn))
+
 runServer :: IO ()
 runServer = do
   dbConn <- fetchConnection

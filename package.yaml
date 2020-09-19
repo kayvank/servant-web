@@ -46,9 +46,6 @@ executables:
     ghc-options:
     - -Wall
     - -Wcompat
-    - -Wincomplete-record-update
-    - -Wincomnplete-uni-patterns
-    - -Wincomnplete-constraints
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
@@ -62,9 +59,6 @@ tests:
     ghc-options:
     - -Wall
     - -Wcompat
-    - -Wincomplete-record-update
-    - -Wincomnplete-uni-patterns
-    - -Wincomnplete-constraints
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N

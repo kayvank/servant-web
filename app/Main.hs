@@ -6,7 +6,17 @@
 
 module Main where
 
+import Control.Monad.IO.Class (liftIO)
+import Control.Monad.Logger (runStderrLoggingT)
+import Database.Persist
+import Database.Persist.Postgresql
 import Database
+import UserApi
+import Schema
+
 
 main :: IO ()
-main = migrateDB connString
+main = runStderrLoggingT $ withPostgresqlPool connString 10 $ \pool -> liftIO $ do
+  flip runSqlPersistMPool pool $ do
+    runMigration migrateAll
+    liftIO $ runServer' connString

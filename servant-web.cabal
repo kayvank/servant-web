@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e3aeafbc10b51cf43e601d48e9df5872a368e8d52bceac1e3bcad87627bd98ef
+-- hash: 45904b183e429dce88f30b4782a9109d7f0f8da5613e37d6cf55d3d13a75ce5c
 
 name:           servant-web
 version:        0.1.0.0
@@ -59,7 +59,7 @@ executable servant-web-exe
       Paths_servant_web
   hs-source-dirs:
       app
-  ghc-options: -Wall -Wcompat -Wincomplete-record-update -Wincomnplete-uni-patterns -Wincomnplete-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aeson
     , base >=4.7 && <5
@@ -85,7 +85,7 @@ test-suite servant-web-test
       Paths_servant_web
   hs-source-dirs:
       test
-  ghc-options: -Wall -Wcompat -Wincomplete-record-update -Wincomnplete-uni-patterns -Wincomnplete-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aeson
     , base >=4.7 && <5
