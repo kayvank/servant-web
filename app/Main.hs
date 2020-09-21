@@ -18,5 +18,6 @@ import Schema
 main :: IO ()
 main = runStderrLoggingT $ withPostgresqlPool connString 10 $ \pool -> liftIO $ do
   flip runSqlPersistMPool pool $ do
-    runMigration migrateAll
+    liftIO $ migrateDB connString
+    -- runMigration migrateAll
     liftIO $ runServer' connString
