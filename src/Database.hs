@@ -20,7 +20,7 @@ import Schema
 
 -- TODO make these environmnet varibables
 connString :: ConnectionString
-connString = "host=172.18.0.2 port=5432 user=q2io dbname=q2io password=password123"
+connString = "host=172.19.0.2 port=5432 user=q2io dbname=q2io password=password123"
 
 fetchConnection ::  IO ConnectionString
 fetchConnection = return connString

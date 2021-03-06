@@ -15,8 +15,6 @@ A simple [servant](https://www.servant.dev/) http server using [docker](https://
 ``` sh
 stack set up
 stack build 
-stack install
-stack run
 ```
 For continues development and quick feedback:
 
@@ -34,6 +32,15 @@ make
 Prerequisite: 
 - [direvn](https://direnv.net/) 
 -  docker hub account
+
+## Execution
+Project may run with `stack run` or as a docker image, and will require postgres.  To bring postgres up:
+
+``` sh
+./db/docker-compose up -d
+docker ps ## to get the process id
+docker inspect {process-id} 
+```
 
 ### Execute docker image locally
 To execute to image locally:

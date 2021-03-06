@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 45904b183e429dce88f30b4782a9109d7f0f8da5613e37d6cf55d3d13a75ce5c
+-- hash: f933fca54e66b8adac03ca878ddb40ea47188f8d9ad59914e02ce4ee712bd91b
 
 name:           servant-web
 version:        0.1.0.0
@@ -39,6 +39,7 @@ library
   build-depends:
       aeson
     , base >=4.7 && <5
+    , dhall
     , monad-logger
     , mtl
     , persistent
@@ -63,6 +64,7 @@ executable servant-web-exe
   build-depends:
       aeson
     , base >=4.7 && <5
+    , dhall
     , monad-logger
     , mtl
     , persistent
@@ -89,6 +91,7 @@ test-suite servant-web-test
   build-depends:
       aeson
     , base >=4.7 && <5
+    , dhall
     , monad-logger
     , mtl
     , persistent

@@ -5,12 +5,12 @@ GET http://localhost:3000/v1/users/3
 
 #
 # Post  user
-#
-POST https://localhost:3000/v1/users
-Content-Type: application/json
-{
-    "name": "user-4",
-    "email": "user-4@acme.com",
-    "age": 93,
-    "occupation": "Manager"
-}
+# #
+# POST http://localhost:3000/v1/users
+# Content-Type: application/json
+# {
+#     "name": "user-1",
+#     "email": "user-1@acme.com",
+#     "age": 81,
+#     "occupation": "Engineer"
+# }
