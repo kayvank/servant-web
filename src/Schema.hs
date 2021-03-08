@@ -10,6 +10,7 @@
 {-# LANGUAGE RecordWildCards            #-}
 {-# LANGUAGE FlexibleInstances          #-}
 {-# LANGUAGE OverloadedStrings          #-}
+{-# LANGUAGE DataKinds #-}
 
 module Schema where
 

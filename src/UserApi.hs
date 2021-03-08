@@ -1,6 +1,4 @@
-{-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE DataKinds #-}
-{-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE TypeOperators #-}
 {-# LANGUAGE OverloadedStrings #-}
 -- |
@@ -32,10 +30,10 @@ fetchUserHandler conn uid =  do
   maybeuser <- liftIO $ fetchUser conn uid
   case maybeuser of
     Just theUser -> return theUser
-    Nothing -> Handler $ ( throwE $ err401 { errBody = "Could not find the user" } )
+    Nothing -> Handler  ( throwE $ err401 { errBody = "Could not find the user" } )
 
 usersServer :: ConnectionString -> Server UsersApi
-usersServer conn = (fetchUserHandler conn) :<|> (createUserHandler conn )
+usersServer conn = fetchUserHandler conn :<|> createUserHandler conn
 
 createUserHandler :: ConnectionString -> User -> Handler Int64
 createUserHandler conn user = liftIO $ createUser conn user

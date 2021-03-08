@@ -1,8 +1,7 @@
 servant-web
 --
-[![CircleCI](https://circleci.com/gh/kayvank/servant-web.svg?style=svg)]( https://circleci.com/gh/kayvank/servant-web)
 
-A simple [servant](https://www.servant.dev/) http server using [docker](https://hub.docker.com/) and [circleci](https://circleci.com/)
+A simple [servant](https://www.servant.dev/) http server 
 
 ## Prerequisite
 - [stack](https://docs.haskellstack.org/en/stable/README/)
