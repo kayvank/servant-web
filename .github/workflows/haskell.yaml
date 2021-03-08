@@ -17,7 +17,7 @@ jobs:
         enable-stack: true
         ghc-version: '8.8' # Resolves to the latest point release of GHC 8.8
         stack-version: 'latest'
-- name: Cache stack
+    - name: Cache stack
       uses: actions/cache@v2
       env:
         cache-name: cache-stack
@@ -28,8 +28,8 @@ jobs:
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
           ${{ runner.os }}-
-- name: Build
-  run:  stack build --system-ghc --test
+    - name: Build
+      run:  stack build --system-ghc --test
 
     - name: Run hlint
       run: curl -sSL https://raw.github.com/ndmitchell/hlint/master/misc/run.sh | sh -s .
